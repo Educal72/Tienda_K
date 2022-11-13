@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>TechShop</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <header>
+        <h1>Buscar Cliente por Apellidos</h1>
+        </header>
+        <section>
+            <h2>Datos Solicitados</h2>
+            <hr/>
+        <form th:action="@{/cliente/buscar/Calderón+Mora}" method="get">
+            <label>Apellidos: </label>
+                    <input type="text" 
+                           name="apellidos" 
+                           placeholder=""
+                           
+                           required><br/>
+                    <hr/>
+            <input type="submit" name="enviar" value="Subir">
+        </form>
+        </section>
+    </body>
+</html>

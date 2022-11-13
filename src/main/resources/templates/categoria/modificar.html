@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>TechShop</title>
+        <meta charset="UTF-8"/>
+        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
+    </head>
+    
+    <body>
+        <header th:replace="layout/plantilla :: header"/>
+        <div>
+        <h2>Informacion de Categoria</h2>
+        <a th:href="@{/categoria/listado}">Regresar</a>
+        <hr/>
+        <form th:action="@{/categoria/guardar}" method="post" th:object="${categoria}">          
+            <input type="hidden" name="idCategoria" th:field="*{idCategoria}">
+        <fieldset>
+            <label for="nombre">Descripcion</label>
+            <textarea name="nombre" th:field="*{descripcion}"/>
+        </fieldset>
+        <fieldset>
+            <label for="limite">Activo</label>
+            <input type="checkbox" name="limite" th:field="*{activo}"/>
+        </fieldset>
+            <hr/>
+            <input type="submit" value="Guardar" name="guardar"/>
+        </form>
+        </div>
+        <footer th:replace="layout/plantilla :: footer"/>
+    </body>
+</html>
