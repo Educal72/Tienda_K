@@ -31,14 +31,15 @@
                     <td style="text-align: right;">[[${#numbers.formatDecimal(cliente.credito.limite,3,2)}]]</td>
                     <td><a th:href="@{/cliente/modificar/} + ${cliente.idCliente}"/>Modificar</td>
                     <td><a th:href="@{/cliente/eliminar/} + ${cliente.idCliente}"/>Eliminar</td>
-                
                 </tr>
             </table>
+            <a th:href="@{/cliente/busqueda/}">Buscar Clientes por Apellido</a>
         </div>
         
         <div th:if="${clientes==null or clientes.empty}">
             <h2>No hay clientes que mostrar</h2>
         </div>
+        
         </div>
         <footer th:replace="layout/plantilla :: footer"/>
     </body>

@@ -3,6 +3,7 @@ package com.tienda.controller;
 
 import com.tienda.domain.Cliente;
 import com.tienda.service.ClienteService;
+import java.util.Arrays;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -48,6 +49,17 @@ public class ClienteController {
         return "redirect:/cliente/listado";
     }
     
+    @GetMapping("/cliente/busqueda")
+    public String clienteBuscar(){
+        return "/cliente/busqueda";
+    }
     
+    @PostMapping("/cliente/buscar")
+    public String clienteBusqueda(Model model, String apellidos){
+        Cliente cliente = clienteService.findByApellido(apellidos);
+        model.addAttribute("cliente", cliente);
+        return "/cliente/modificar";
+    }
     
+
 }

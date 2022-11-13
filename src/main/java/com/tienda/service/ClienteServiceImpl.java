@@ -29,12 +29,6 @@ public class ClienteServiceImpl implements ClienteService {
     public Cliente getCliente(Cliente cliente) {
         return clienteDao.findById(cliente.getIdCliente()).orElse(null);
     }
-    
-    @Override
-    @Transactional
-    public List<Cliente> getByApellido(String apellidos) {
-        return clienteDao.findByApellidos(apellidos);
-    }
 
     @Override
     @Transactional
@@ -49,6 +43,12 @@ public class ClienteServiceImpl implements ClienteService {
     @Transactional
     public void delete(Cliente cliente) {
         clienteDao.delete(cliente);
+    }
+    
+    @Override
+    @Transactional(readOnly=true)
+    public Cliente findByApellido(String apellidos){
+       return clienteDao.findByApellidos(apellidos);
     }
     
 }

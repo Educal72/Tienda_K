@@ -6,24 +6,25 @@
         <title>TechShop</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <header>
+        <header th:replace="layout/plantilla :: header"/>
         <h1>Buscar Cliente por Apellidos</h1>
         </header>
-        <section>
+        <section class="contenido"><br>
             <h2>Datos Solicitados</h2>
             <hr/>
-        <form th:action="@{/cliente/buscar/Calderón+Mora}" method="get">
-            <label>Apellidos: </label>
+        <br><form th:action="@{/cliente/buscar}" method="post" th:object="${clientes}">
+            <label>Apellidos:</label><br>
                     <input type="text" 
                            name="apellidos" 
                            placeholder=""
-                           
                            required><br/>
-                    <hr/>
+                    <br><hr/><br>
             <input type="submit" name="enviar" value="Subir">
         </form>
         </section>
+        <footer th:replace="layout/plantilla :: footer"/>
     </body>
 </html>

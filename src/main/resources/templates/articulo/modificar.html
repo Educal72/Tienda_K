@@ -16,6 +16,7 @@
         <hr/>
         <form th:action="@{/articulo/guardar}" method="post" th:object="${articulo}">          
             <input type="hidden" name="idArticulo" th:field="*{idArticulo}">
+                <input type="hidden" name="idCategoria" th:field="*{idCategoria}">
         <fieldset>
             <label for="descripcion">Descripcion</label>
             <input type="text" name="descripcion" th:field="*{descripcion}"/>

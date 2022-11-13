@@ -14,6 +14,6 @@ public interface ClienteService {
     
     public void delete(Cliente cliente);
     
-    public List<Cliente> getByApellido(String apellidos);
+    public Cliente findByApellido(String apellidos);
     
 }
