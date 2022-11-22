@@ -13,10 +13,10 @@
         <h1>Buscar Cliente por Apellidos</h1>
         </header>
         <section class="contenido"><br>
-            <h2>Datos Solicitados</h2>
+            <h2>[[#{cliente.datos}]]</h2>
             <hr/>
         <br><form th:action="@{/cliente/buscar}" method="post" th:object="${clientes}">
-            <label>Apellidos:</label><br>
+            <label>[[#{cliente.apellidos}]]</label><br>
                     <input type="text" 
                            name="apellidos" 
                            placeholder=""
